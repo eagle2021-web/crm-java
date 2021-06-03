@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+<!--    配置一个自动扫描的包-->
+    <context:component-scan base-package="com.itbull.book_mall" use-default-filters="false">
+        <context:include-filter type="annotation"
+                                expression="org.springframework.stereotype.Controller"/>
+        <context:include-filter type="annotation"
+                                expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
+    </context:component-scan>
+<!--配置InternalResourceViewResolve，如果我们在目标方法返回一个“loginOK"，则真实的资源就是前缀prefix/名字/suffix，loginOK =>/WEB-INF/pages/loginOK.jsp-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--前缀：指定视图文件的路径-->
+        <property name="prefix" value="/WEB-INF/pages/" />
+        <!--后缀：视图文件的扩展名-->
+        <property name="suffix" value=".jsp" />
+    </bean>
+<!--    加入两个常规配置,才会加载js css 文件-->
+<!--    <mvc:default-servlet-handler/>-->
+    <mvc:annotation-driven/>
+    <mvc:cors>
+        <mvc:mapping path="/**" />
+    </mvc:cors>
+</beans>
