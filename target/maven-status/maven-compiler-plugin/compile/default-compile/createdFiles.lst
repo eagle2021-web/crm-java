@@ -1,6 +1,5 @@
 com\itbull\book_mall\service\impl\GoodsServiceImpl.class
 com\itbull\book_mall\entity\Goods.class
-com\itbull\book_mall\service\GoodsService.class
 com\itbull\book_mall\dao\GoodsMapper.class
 com\itbull\book_mall\service\interface_\GoodsService.class
 com\itbull\book_mall\handler\JsonHandler.class
