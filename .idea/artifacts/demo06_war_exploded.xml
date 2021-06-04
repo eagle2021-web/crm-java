@@ -71,6 +71,11 @@
           <element id="library" level="project" name="Maven: com.github.ben-manes.caffeine:caffeine:2.6.2" />
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.8.0" />
           <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.4" />
+          <element id="library" level="project" name="Maven: org.webjars.npm:md5:2.3.0" />
+          <element id="library" level="project" name="Maven: org.webjars.npm:charenc:0.0.2" />
+          <element id="library" level="project" name="Maven: org.webjars.npm:crypt:0.0.2" />
+          <element id="library" level="project" name="Maven: org.webjars.npm:is-buffer:1.1.6" />
+          <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.10" />
         </element>
       </element>
       <element id="directory" name="META-INF">

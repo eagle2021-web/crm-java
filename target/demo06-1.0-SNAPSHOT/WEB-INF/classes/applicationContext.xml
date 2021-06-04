@@ -7,7 +7,7 @@
 http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 
-    <context:component-scan base-package="com.itbull.book_mall.*">
+    <context:component-scan base-package="com.itbull.crm.*">
         <context:exclude-filter type="annotation"
                                 expression="org.springframework.stereotype.Controller"/>
         <context:exclude-filter type="annotation"
@@ -40,7 +40,7 @@ http://www.springframework.org/schema/tx
     <tx:annotation-driven transaction-manager="dataSourceTransactionManager"/>
     <!--    配置Mapper的 管理包-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.itbull.book_mall"/>
+        <property name="basePackage" value="com.itbull.crm"/>
     </bean>
 
 </beans>

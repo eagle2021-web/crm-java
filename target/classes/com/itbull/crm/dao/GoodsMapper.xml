@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itbull.crm.dao.GoodsMapper" >
+  <resultMap id="BaseResultMap" type="com.itbull.crm.entity.Goods">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="publishDate" jdbcType="DATE" property="publishdate" />
+    <result column="price" jdbcType="DOUBLE" property="price" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from mybatis_hsp.mybatis_goods
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.itbull.crm.entity.Goods">
+    insert into mybatis_hsp.mybatis_goods (id, name, publishDate,
+      price)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{publishdate,jdbcType=DATE}, 
+      #{price,jdbcType=DOUBLE})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.itbull.crm.entity.Goods">
+    update mybatis_hsp.mybatis_goods
+    set name = #{name,jdbcType=VARCHAR},
+      publishDate = #{publishdate,jdbcType=DATE},
+      price = #{price,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, name, publishDate, price
+    from mybatis_hsp.mybatis_goods
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, name, publishDate, price
+    from mybatis_hsp.mybatis_goods
+  </select>
+</mapper>
